@@ -1,0 +1,29 @@
+# fly.toml file generated for gaste on 2023-06-07T15:19:09+03:00
+
+app = "gaste"
+kill_signal = "SIGINT"
+kill_timeout = 5
+primary_region = "otp"
+processes = []
+
+[mounts]
+  destination = "/pb/pb_data"
+  source = "pb_data"
+
+[[services]]
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443

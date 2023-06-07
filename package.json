@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "go build -o ./dist/osx main.go",
+    "build_linux": "GOOS=linux GOARCH=amd64 go build -o ./dist/linux main.go",
+    "deploy": "flyctl deploy --dockerfile dockerfile"
+  },
+  "license": "MIT"
+}

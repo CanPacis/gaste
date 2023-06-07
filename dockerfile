@@ -6,7 +6,7 @@ RUN apk add --no-cache \
     unzip \
     openssh
 
-ADD https://github.com/kasif-apps/backend/releases/download/v0.0.1/server.zip /tmp/pb.zip
+ADD https://github.com/CanPacis/gaste/releases/download/v0.0.1/server.zip /tmp/pb.zip
 RUN unzip /tmp/pb.zip -d /pb/
 
 EXPOSE 8080
